@@ -26,12 +26,12 @@ public:
     QString hostname;
     MainWindow *mw;
 public slots:
-    void on_btn_exit2_clicked();
-    void on_btn_exit1_clicked();
-    void on_btn_register_clicked();
+//    void on_btn_exit2_clicked();
+//    void on_btn_exit1_clicked();
+//    void on_btn_register_clicked();
     void on_btn_login_clicked();
-    void authFinishedSlot(QNetworkReply *reply);
-    void registerFinishedSlot(QNetworkReply *reply);
+//    void authFinishedSlot(QNetworkReply *reply);
+//    void registerFinishedSlot(QNetworkReply *reply);
 private:
     Ui::LoginWindow *ui;
     QString getUser();

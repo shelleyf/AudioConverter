@@ -6,264 +6,130 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>280</width>
-    <height>400</height>
+    <width>576</width>
+    <height>232</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>280</width>
-    <height>400</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>280</width>
-    <height>400</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>LoginWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>281</width>
-      <height>401</height>
+      <x>80</x>
+      <y>10</y>
+      <width>431</width>
+      <height>31</height>
      </rect>
     </property>
-    <property name="currentIndex">
-     <number>1</number>
+    <property name="text">
+     <string>作者已出国，国内服务器不维护了。本软件现为免费、开源软件。有空就更新。</string>
     </property>
-    <widget class="QWidget" name="tab1">
-     <attribute name="title">
-      <string>登录 </string>
-     </attribute>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>110</y>
-        <width>54</width>
-        <height>12</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>用户名</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>160</y>
-        <width>54</width>
-        <height>12</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>密码</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="le_login_1">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>110</y>
-        <width>113</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="le_login_2">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>150</y>
-        <width>113</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_login">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>260</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>登录</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_exit2">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>260</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>退出</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_7">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>30</y>
-        <width>111</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>痛快王语音助手</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab2">
-     <attribute name="title">
-      <string>注册</string>
-     </attribute>
-     <widget class="QLineEdit" name="le_register_1">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>110</y>
-        <width>113</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="le_register_2">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>150</y>
-        <width>113</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="le_register_3">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>190</y>
-        <width>113</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>110</y>
-        <width>54</width>
-        <height>12</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>用户名</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>150</y>
-        <width>54</width>
-        <height>12</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>密码</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>190</y>
-        <width>91</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>再次输入密码</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_6">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>230</y>
-        <width>54</width>
-        <height>12</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>QQ号</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="le_register_4">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>230</y>
-        <width>113</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_register">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>280</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>注册</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_exit1">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>280</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>退出</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_8">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>30</y>
-        <width>111</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>痛快王语音助手</string>
-      </property>
-     </widget>
-    </widget>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>40</y>
+      <width>411</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>源码地址：https://github.com/shelleyf/AudioConverter</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>80</y>
+      <width>431</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>任何问题或者提新功能请加QQ群：626913648</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_login">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>190</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>我同意为祖国花朵戒网瘾事业做贡献！</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>60</y>
+      <width>311</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>有空的话请去点个星星，谢谢了。</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>100</y>
+      <width>401</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>使用指南：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>120</y>
+      <width>331</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>虐了不骂，等于没虐。</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>140</y>
+      <width>331</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>玩游戏的都是狗，狗B跟爹讲素质，爹赏狗B嘴巴子。</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>160</y>
+      <width>331</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>少玩游戏，早日戒除网瘾。自己暂时戒不了就先帮别人戒吧。</string>
+    </property>
    </widget>
   </widget>
  </widget>

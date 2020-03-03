@@ -52,16 +52,16 @@ MainWindow::MainWindow(QWidget *parent) :
     connect( KeyCapturer::instance(), &KeyCapturer::getKey, [=](int key){
         if(key==121)on_btn_play_clicked();
     });
-    ui->label_username->setText(current_user->username);
-    qDebug()<<current_user->is_activate;
-    if(current_user->is_activate==0){
-        ui->label_activate_status->setText("未激活");
-    }else{
-        ui->label_activate_status->setText("已激活");
-        ui->label_left->hide();
-        ui->label_left_times->hide();
-    }
-    ui->label_left_times->setText(QString::number(current_user->left_times));
+//    ui->label_username->setText(current_user->username);
+//    qDebug()<<current_user->is_activate;
+//    if(current_user->is_activate==0){
+//        ui->label_activate_status->setText("未激活");
+//    }else{
+//        ui->label_activate_status->setText("已激活");
+//        ui->label_left->hide();
+//        ui->label_left_times->hide();
+//    }
+//    ui->label_left_times->setText(QString::number(current_user->left_times));
     ui->stackedWidget->setCurrentIndex(1);
     ui->labelSpeed->setText(QString::number(voice_speed));
     ui->labelTune->setText(QString::number(voice_tune));
@@ -398,20 +398,20 @@ void MainWindow::on_btn_play_clicked(){
 }
 
 bool MainWindow::playAuth(){
-    QNetworkAccessManager* manager = new QNetworkAccessManager;
-    QByteArray params;
-    params.append("username="+current_user->username);
-    params.append("&ip="+getIP());
-    params.append("&hostname="+hostname);
-    QNetworkRequest req;
-    req.setHeader(QNetworkRequest::ContentTypeHeader,"application/x-www-form-urlencoded;charset=UTF-8");
-    req.setUrl(QUrl("http://119.3.209.144/php/playAuth.php"));
-    manager->post(req,params);
-    QObject::connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(playAuthFinishedSlot(QNetworkReply*)));
-    if(current_user->is_activate==0 && current_user->left_times<=0){
-        qDebug()<<current_user->left_times;
-        return false;
-    }
+//    QNetworkAccessManager* manager = new QNetworkAccessManager;
+//    QByteArray params;
+//    params.append("username="+current_user->username);
+//    params.append("&ip="+getIP());
+//    params.append("&hostname="+hostname);
+//    QNetworkRequest req;
+//    req.setHeader(QNetworkRequest::ContentTypeHeader,"application/x-www-form-urlencoded;charset=UTF-8");
+//    req.setUrl(QUrl("http://119.3.209.144/php/playAuth.php"));
+//    manager->post(req,params);
+//    QObject::connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(playAuthFinishedSlot(QNetworkReply*)));
+//    if(current_user->is_activate==0 && current_user->left_times<=0){
+//        qDebug()<<current_user->left_times;
+//        return false;
+//    }
     return true;
 }
 
@@ -530,74 +530,77 @@ void MainWindow::on_cb_voice_currentIndexChanged(int index)
 
 void MainWindow::on_btn_vip_clicked()
 {
-    if(ui->le_activate->text().length()<6 || ui->le_activate->text().length()>40 || isDigitStr(ui->le_activate->text()) == 1||isDigitStr(ui->le_activate->text()) == 1){
-        QMessageBox::information(this,"错误","格式错误");
-        return;
-    }
-    if(current_user->is_activate==1){
-        QMessageBox::information(this,"错误","已激活");
-    }
-    QNetworkAccessManager* manager = new QNetworkAccessManager;
-    QByteArray params;
-    params.append("username="+current_user->username);
-    params.append("&activate_code="+ui->le_activate->text());
-    QNetworkRequest req;
-    req.setHeader(QNetworkRequest::ContentTypeHeader,"application/x-www-form-urlencoded;charset=UTF-8");
-    req.setUrl(QUrl("http://119.3.209.144/php/activate.php"));
-    manager->post(req,params);
-    QObject::connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(activateFinishedSlot(QNetworkReply*)));
+    QMessageBox::information(this,"错误","已激活");
+//    if(ui->le_activate->text().length()<6 || ui->le_activate->text().length()>40 || isDigitStr(ui->le_activate->text()) == 1||isDigitStr(ui->le_activate->text()) == 1){
+//        QMessageBox::information(this,"错误","格式错误");
+//        return;
+//    }
+//    if(current_user->is_activate==1){
+//        QMessageBox::information(this,"错误","已激活");
+//    }
+//    QNetworkAccessManager* manager = new QNetworkAccessManager;
+//    QByteArray params;
+//    params.append("username="+current_user->username);
+//    params.append("&activate_code="+ui->le_activate->text());
+//    QNetworkRequest req;
+//    req.setHeader(QNetworkRequest::ContentTypeHeader,"application/x-www-form-urlencoded;charset=UTF-8");
+//    req.setUrl(QUrl("http://119.3.209.144/php/activate.php"));
+//    manager->post(req,params);
+//    QObject::connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(activateFinishedSlot(QNetworkReply*)));
 }
 
 void MainWindow::activateFinishedSlot(QNetworkReply *reply){
-    if(reply->error() != QNetworkReply::NoError)
-    {
-        qDebug() << "Error:" << reply->errorString();
-        QMessageBox::information(this,"错误","网络错误");
-        return;
-    }
-    QByteArray buf = reply->readAll();
-    qDebug()<<QString(buf).toLocal8Bit().data();
-    QJsonDocument jsonDocument = QJsonDocument::fromJson(buf);
-    QJsonObject jsonObject = jsonDocument.object();
-    int tmp=jsonObject.take("success").toInt();
-    if(tmp==1){
-        QMessageBox::information(this,"恭喜","激活成功");
-        ui->label_activate_status->setText("已激活");
-        ui->label_left->setText("");
-        current_user->is_activate=1;
-    }else{
-        QMessageBox::information(this,"错误","激活失败");
-        return;
-    }
+    QMessageBox::information(this,"错误","已激活");
+//    if(reply->error() != QNetworkReply::NoError)
+//    {
+//        qDebug() << "Error:" << reply->errorString();
+//        QMessageBox::information(this,"错误","网络错误");
+//        return;
+//    }
+//    QByteArray buf = reply->readAll();
+//    qDebug()<<QString(buf).toLocal8Bit().data();
+//    QJsonDocument jsonDocument = QJsonDocument::fromJson(buf);
+//    QJsonObject jsonObject = jsonDocument.object();
+//    int tmp=jsonObject.take("success").toInt();
+//    if(tmp==1){
+//        QMessageBox::information(this,"恭喜","激活成功");
+//        ui->label_activate_status->setText("已激活");
+//        ui->label_left->setText("");
+//        current_user->is_activate=1;
+//    }else{
+//        QMessageBox::information(this,"错误","激活失败");
+//        return;
+//    }
 }
 
 void MainWindow::playAuthFinishedSlot(QNetworkReply *reply){
-    if(reply->error() != QNetworkReply::NoError)
-    {
-        qDebug() << "Error:" << reply->errorString();
-        QMessageBox::information(this,"错误","网络错误");
-        return;
-    }
-    QByteArray buf = reply->readAll();
-    qDebug()<<QString(buf).toLocal8Bit().data();
-    QJsonDocument jsonDocument = QJsonDocument::fromJson(buf);
-    QJsonObject jsonObject = jsonDocument.object();
-    if(jsonObject.take("success").toInt()==0){
-        QMessageBox::information(this,"错误","服务器验证不通过");
-        app->quit();
-    }
-    if(jsonObject.take("is_activate").toInt()==0 && jsonObject.take("left_times").toInt()<=0){
-        QMessageBox::information(this,"验证错误","免费次数已用完，请激活");
-        app->quit();
-    }
-    if(jsonObject.take("authIP").toInt()==0){
-        QMessageBox::information(this,"错误","用户在另一处登录");
-        app->quit();
-    }
-    QJsonObject jsonObject2 = jsonDocument.object();
-    current_user->is_activate=jsonObject2.take("is_activate").toInt();
-    current_user->left_times=jsonObject2.take("left_times").toInt();
-    ui->label_left_times->setText(QString::number(current_user->left_times));
+    QMessageBox::information(this,"错误","已激活");
+//    if(reply->error() != QNetworkReply::NoError)
+//    {
+//        qDebug() << "Error:" << reply->errorString();
+//        QMessageBox::information(this,"错误","网络错误");
+//        return;
+//    }
+//    QByteArray buf = reply->readAll();
+//    qDebug()<<QString(buf).toLocal8Bit().data();
+//    QJsonDocument jsonDocument = QJsonDocument::fromJson(buf);
+//    QJsonObject jsonObject = jsonDocument.object();
+//    if(jsonObject.take("success").toInt()==0){
+//        QMessageBox::information(this,"错误","服务器验证不通过");
+//        app->quit();
+//    }
+//    if(jsonObject.take("is_activate").toInt()==0 && jsonObject.take("left_times").toInt()<=0){
+//        QMessageBox::information(this,"验证错误","免费次数已用完，请激活");
+//        app->quit();
+//    }
+//    if(jsonObject.take("authIP").toInt()==0){
+//        QMessageBox::information(this,"错误","用户在另一处登录");
+//        app->quit();
+//    }
+//    QJsonObject jsonObject2 = jsonDocument.object();
+//    current_user->is_activate=jsonObject2.take("is_activate").toInt();
+//    current_user->left_times=jsonObject2.take("left_times").toInt();
+//    ui->label_left_times->setText(QString::number(current_user->left_times));
 }
 
 

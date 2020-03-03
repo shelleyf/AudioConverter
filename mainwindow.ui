@@ -814,33 +814,58 @@
      <widget class="QLabel" name="label_21">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>40</y>
-        <width>321</width>
-        <height>311</height>
+        <x>30</x>
+        <y>90</y>
+        <width>731</width>
+        <height>101</height>
        </rect>
       </property>
-      <property name="text">
-       <string/>
+      <property name="font">
+       <font>
+        <family>楷体</family>
+        <pointsize>20</pointsize>
+       </font>
       </property>
-      <property name="pixmap">
-       <pixmap resource="res.qrc">:/res/pay2.jpg</pixmap>
+      <property name="text">
+       <string>本软件现为免费开源软件，此功能已废弃。</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_22">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>70</y>
-        <width>261</width>
-        <height>261</height>
+        <x>30</x>
+        <y>220</y>
+        <width>721</width>
+        <height>61</height>
        </rect>
       </property>
-      <property name="text">
-       <string/>
+      <property name="font">
+       <font>
+        <family>楷体</family>
+        <pointsize>20</pointsize>
+       </font>
       </property>
-      <property name="pixmap">
-       <pixmap resource="res.qrc">:/res/paywx.jpg</pixmap>
+      <property name="text">
+       <string>作者支付宝：907013598@qq.com</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>180</y>
+        <width>521</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>楷体</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>觉得好用的话，可以随意捐几毛钱给作者。</string>
       </property>
      </widget>
     </widget>
@@ -1042,8 +1067,6 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="res.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
