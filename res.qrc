@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>jaguar.wav</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>res/pay.jpg</file>
+        <file>res/pay2.jpg</file>
+        <file>res/paywx.jpg</file>
+    </qresource>
+</RCC>
